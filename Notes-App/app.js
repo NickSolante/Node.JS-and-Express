@@ -1,4 +1,5 @@
-const fs = require('fs');
+const firstName = require('./utils.js')
+
+console.log(firstName)
 
 
-fs.appendFileSync('notes.txt', ' this is the new stuff');
