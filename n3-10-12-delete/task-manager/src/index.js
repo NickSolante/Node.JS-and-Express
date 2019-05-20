@@ -7,32 +7,6 @@ const bcrypt = require('bcryptjs')
 const app = express()
 const port = process.env.PORT || 3000
 
-// app.use((req, res , next) => {
-//     if(req.method === 'GET'){
-//         res.send('Get request disabled')
-//     }else {
-//         next()
-//     }
-//
-// })
-
-app.use((req, res, next) => {
-    if(req.method === 'GET'){
-        res.status(503).send('maintenance mode')
-    }
-    else if(req.method === 'POST'){
-        res.status(503).send('maintenance mode')
-    }
-    else if(req.method === 'PATCH'){
-        res.status(503).send('maintenance mode')
-    }
-    else if(req.method === 'DELETE'){
-        res.status(503).send('maintenance mode')
-    }
-    else {
-        next()
-    }
-})
 
 app.use(express.json())
 app.use(routerUser)
